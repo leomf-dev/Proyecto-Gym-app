@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/btnCompras"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,5 +19,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="test"/>
+=======
+        android:id="@+id/btnCambioAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cambio activity">
+>>>>>>> 2cadea1e054fc78356d006e0c32a347a3eaa836b
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </Button>
+
+</LinearLayout>

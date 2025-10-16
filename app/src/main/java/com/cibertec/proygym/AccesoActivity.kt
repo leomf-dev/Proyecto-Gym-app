@@ -3,9 +3,13 @@ package com.cibertec.proygym
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+<<<<<<< HEAD
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+=======
+import android.widget.TextView
+>>>>>>> 2cadea1e054fc78356d006e0c32a347a3eaa836b
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
@@ -16,6 +20,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class AccesoActivity : AppCompatActivity() {
+<<<<<<< HEAD
     var tvRegistro: TextView?= null
     private lateinit var tietCorreo : TextInputEditText
     private lateinit var tietClave : TextInputEditText
@@ -27,6 +32,10 @@ class AccesoActivity : AppCompatActivity() {
     private val listaUsuarios = mutableListOf(
         Usuario(1, "Leo", "Melendez Falcon", "leomf@gmail.com", "1234")
     )
+=======
+
+var tvRegistro : TextView ?= null
+>>>>>>> 2cadea1e054fc78356d006e0c32a347a3eaa836b
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +43,7 @@ class AccesoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_acceso)
 
         tvRegistro = findViewById(R.id.tvRegistro)
+<<<<<<< HEAD
         tietCorreo = findViewById(R.id.tietCorreo)
         tietClave = findViewById(R.id.tietClave)
         tilCorreo = findViewById(R.id.tilCorreo)
@@ -45,6 +55,10 @@ class AccesoActivity : AppCompatActivity() {
         }
 
         tvRegistro?.setOnClickListener {
+=======
+
+        tvRegistro.setOnClickListener {
+>>>>>>> 2cadea1e054fc78356d006e0c32a347a3eaa836b
             cambioActivity(RegistroActivity::class.java)
         }
 
@@ -61,6 +75,7 @@ class AccesoActivity : AppCompatActivity() {
         }
     }
 
+<<<<<<< HEAD
     fun validarCampos(){
         val correo = tietCorreo.text.toString().trim()
         val clave = tietClave.text.toString().trim()
@@ -117,4 +132,10 @@ class AccesoActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+=======
+    fun cambioActivity(activityDestino : Class<out Activity>) {
+        val intent = Intent(this, activityDestino)
+        startActivity(intent)
+    }
+>>>>>>> 2cadea1e054fc78356d006e0c32a347a3eaa836b
 }
