@@ -6,4 +6,18 @@
     </style>
 
     <style name="Theme.Proygym" parent="Base.Theme.Proygym" />
+
+    <style name="titulo1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="boton1">
+        <item name="android:shape">rectangle</item>
+        <item name="android:solidColor">@color/verdeoscuro</item>
+        <item name="cornerRadius">70dp</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/black</item>
+    </style>
 </resources>

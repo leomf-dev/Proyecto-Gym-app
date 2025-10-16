@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verdeblanco"
+    tools:context=".RegistroActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Framelayout = Basicamente como un position=fixed;z-index=-1 en HTML-CSS -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_gym"
+                android:alpha="0.33"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <!-- FALTA : Agregar estilos predeterminados para los textos -->
+                <TextView
+                    android:id="@+id/tvTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crear nueva cuenta"
+                    android:layout_marginTop="16dp"
+                    style="@style/titulo1"/>
+
+                <!-- Notas: counterMaxLength = Limite de caracteres.
+                            counterEnabled(true) = Contador que se mostrara debajo del campo de texto.
+                            Hint = Etiqueta flotante, osea aparecera despues que el usuario escriba. -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DNI"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:counterMaxLength="8"
+                    app:counterEnabled="true">
+
+                    <!-- Notas: singleLine(true) = Restringe a un sola linea, osea no se permiten saltos de linea. -->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietDni"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:maxLength="8"/>
+
+                <!-- Recordatorio: TextInputsEditText = Normalmente van dentro de un TextInputLayout -->
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Notas: orientation = Organiza la vista en una direccion (horizontal o vertical),
+                                          principalmente en LinearLayout o RadioGroup.
+                            marginHorizontal = Es como marginLeft/marginRight pero junto.
+                            weightSum = Principalmente se usa en LinearLayout y define el peso total para distribuir
+                                        el espacio entre sus elementos hijos cuando se les asigna layout_weight.
+                                        Ejemplo: hijo1(weight=1), hijo2(weight=2), hijo3(weight=3), weightSum(6) |■■|■■■■|■■■■■■|
+                                                                                                                   1/6  2/6   3/6
+                                        Ejemplo 2: hijo1(weight=1), hijo2(weight=2), hijo3(weight=3), weightSum(3) |■■■■|■■■■■■■■|■■ (no crece más)|
+                                                    hijo3 queda fuera del reparto porque weightSum solo permite repartir 3. -->
+                <LinearLayout
+                    android:id="@+id/llayApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilApellidoPaterno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido paterno"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp">
+
+                        <!-- Nota: inputType(textCapWords) = Cada palabra que escriba el usuario comenzara con Mayus -->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tietApellidoPaterno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:inputType="textCapWords"
+                            android:nextFocusDown="@id/tietApellidoMaterno"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilApellidoMaterno"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido materno"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp">
+
+                        <!-- Nota: match_parent = Se ajusta 100% al contenedor padre.
+                                    wrap_parent = Se ajusta a como se nesecite su contenido. -->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tietApellidoMaterno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:inputType="textCapWords"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNombres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombres"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietNombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="textCapWords"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCelular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Celular"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:counterMaxLength="9"
+                    app:counterEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietCelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="phone"
+                        android:maxLength="9"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvSexo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo:"
+                    android:paddingHorizontal="8dp"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbtMasculino"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Masculino"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        app:buttonTint="@color/verdeoscuro"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbtFemenino"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Femenino"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        app:buttonTint="@color/verdeoscuro"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/rbtNinguno"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Prefiero no decirlo"
+                        android:checked="true"
+                        android:layout_weight="1"
+                        android:padding="8dp"
+                        app:buttonTint="@color/verdeoscuro"/>
+
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:suffixText="/@cibertec.edu.pe">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        app:suffixText="\@dominio.com"
+                        android:inputType="text"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Nota: passwordToggleEnabled = atributo de Material Design, Activa el boton de mostrar/ocultar contraseña. -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilClave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietClave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:inputType="textPassword"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Nota: paddingStart,End & marginStart,End = Es igual que marginRight o paddingLeft pero se recomienda
+                                                                usar estos por los ajustes de los distintos idiomas. -->
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/chkTyc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Acepto los terminos y condiciones y la politica de privacidad de GymFitness"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/grisoscuro"
+                    android:layout_marginStart="16dp"
+                    android:paddingStart="8dp"
+                    android:button="@drawable/ic_checkbox_outline"
+                    app:buttonTint="@color/verdeoscuro"
+                    android:paddingEnd="8dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <!-- La diferencia entre Button y MaterialButton = Button es parte del sistema, en cambio, Material button
+                                            soporta los estilos de MaterialDesign que en parte es de la libreria Material Components (que tampoco son lo mismo)
+                                            desgin = lengua | component = libreria o codigo que lo implementa. -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarse"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/verdeoscuro"
+                    style="@style/boton1"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

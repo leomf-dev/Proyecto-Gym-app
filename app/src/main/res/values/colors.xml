@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--Neutros-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="rojonaranja">#F54927</color>
+
+    <!--Primarios-->
+    <color name="naranja">#FF540F</color>
+    <color name="rojo">#FA0000</color>
+    <color name="verde">#22FF00</color>
+    <color name="celeste">#00FFE6</color>
+    <color name="azul">#0000FF</color>
+    <color name="purpura">#8C00FF</color>
+    <color name="rosado">#FF00F2</color>
+    <color name="amarillo">#F6FF00</color>
+
+    <!--Combinados-->
+    <color name="rojonaranja">#FF9D00</color>
+    <color name="marronoscuro">#453C1E</color>
+    <color name="verdeblanco">#EAFFD6</color>
+    <color name="verdeverde">#47FF2B</color>
+    <color name="verdeoscuro">#227316</color>
+    <color name="verdeaunmasoscuro">#113B0D</color>
+
+    <!--Contrastes-->
+    <color name="negroconcisoperfectoparafondosybordes">#171717</color>
+    <color name="grisclaro">#D6D6D6</color>
+    <color name="gris">#B0B0B0</color>
+    <color name="grisoscuro">#7D7D7D</color>
+
 </resources>
