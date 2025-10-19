@@ -29,10 +29,6 @@
 
     </LinearLayout>
 
-    <!-- NavigationMenu = Componente de MaterialDesign (no al base).
-         fitsSystemWindows = Ajusta automaticamente su contenido para no quedar debajo de la barra de estodo
-                             o barra de navegacion del sistema. (la partesita minuscula esa de arriba del movil o la de abajo)
-         app:menu = Sirve pa enlazar el menu.-->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nvMenu"
         android:layout_width="wrap_content"

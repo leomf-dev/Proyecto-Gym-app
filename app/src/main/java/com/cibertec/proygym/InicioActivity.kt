@@ -31,12 +31,10 @@ class InicioActivity : AppCompatActivity() {
 
         ivMenu.setOnClickListener { dlayMenu.open() }
 
-        // .setNavigationItemSelectedListener = .setOnClickListener version 2 pero para Navigation (donde son varios items).
         nvMenu.setNavigationItemSelectedListener { menuItem ->
             menuItem.isChecked = true
             dlayMenu.closeDrawers()
 
-            // When = similar a switcht de java.
             when(menuItem.itemId){
                 R.id.itInicio -> replaceFragment(InicioFragment())
                 R.id.itPerfil -> replaceFragment(PerfilFragment())
@@ -44,7 +42,7 @@ class InicioActivity : AppCompatActivity() {
                 R.id.itCerrarSesion -> startActivity(Intent(this, AccesoActivity::class.java)
                 )
             }
-            // Devuelve "true" para indicar que se manejo el evento correctamente.
+
             true
         }
 

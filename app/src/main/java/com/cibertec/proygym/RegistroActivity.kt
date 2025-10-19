@@ -47,18 +47,6 @@ class RegistroActivity : AppCompatActivity() {
         btnGuardar = findViewById(R.id.btnGuardar)
 
         btnGuardar.setOnClickListener {
-//            val dni = tietDni.text.toString().trim().takeIf { it.length < 8 }?.let { Toast.makeText(this, "Ingresa tu DNI correctamente.", Toast.LENGTH_SHORT).show();return@let } // ?: Toast.makeText(this, "DNI correcto!", Toast.LENGTH_LONG).show()
-//            //val dni = tietDni.text.toString().trim().also{ if (it.isEmpty()) Toast.makeText(this, "Ingresa tu DNI.", Toast.LENGTH_SHORT).show() }
-//            val apellido = tietApellido.text.toString().trim().takeIf { it.isEmpty() }?.let { Toast.makeText(this, "Ingresa tu apellido", Toast.LENGTH_SHORT).show();return@let }
-//            //val apePaterno = tietApellidoPaterno.text.toString().trim().takeIf { it.isEmpty() }?.let { Toast.makeText(this, "Ingresa tu apellido paterno.", Toast.LENGTH_SHORT).show() }
-//            val nombres = tietNombres.text.toString().trim().ifEmpty { Toast.makeText(this, "Ingresa tu nombre", Toast.LENGTH_SHORT).show(); return@ifEmpty } // ?: Toast.makeText(this, "Nombre Correcto", Toast.LENGTH_SHORT).show() | Nomas para demostracion
-//            val peso = tietNombres.text.toString().trim().ifEmpty { Toast.makeText(this, "Ingresa tu peso", Toast.LENGTH_SHORT).show(); return@ifEmpty }
-//            val altura = tietNombres.text.toString().trim().ifEmpty { Toast.makeText(this, "Ingresa tu altura", Toast.LENGTH_SHORT).show(); return@ifEmpty }
-//            val celular = tietCelular.text.toString().trim().also{ if (it.isEmpty()) Toast.makeText(this, "Ingresa tu celular", Toast.LENGTH_SHORT).show() else if(it.length !=9) Toast.makeText(this, "El telefono debe tener 9 digitos", Toast.LENGTH_SHORT).show(); return@also }
-//            val sexo = rgSexo.checkedRadioButtonId.takeIf { it !=-1 }?.let { findViewById<RadioButton>(it).text.toString() }?: Toast.makeText(this, "Selecciona un sexo.", Toast.LENGTH_SHORT).show()
-//            val correo = tietCorreo.text.toString().trim().takeIf { it.isEmpty() }?.let { Toast.makeText(this, "Ingresa tu correo.", Toast.LENGTH_SHORT).show(); return@let }
-//            val clave = tietClave.text.toString().trim().also{ if(it.isEmpty()) Toast.makeText(this, "Ingresa tu clave.", Toast.LENGTH_SHORT).show(); if (it.length < 8) Toast.makeText(this, "La contraseña debe tener almenos 8 caracteres", Toast.LENGTH_LONG).show(); return@also }
-//            val confirmarClave = tietConfirmarClave.text.toString().trim().also{ if(it.isEmpty()) Toast.makeText(this, "Confirma tu clave.", Toast.LENGTH_SHORT).show(); if (clave != it) Toast.makeText(this, "Las constraseñas no coinciden", Toast.LENGTH_LONG).show(); return@also }
             validar()
         }
 
@@ -69,28 +57,6 @@ class RegistroActivity : AppCompatActivity() {
         }
     }
 
-    // Conceptos clave = Funciones de alcance, Expresion lambda, Funciones de ambito
-    // Funciones de alcance (Score Functions) = Son funciones de la biblioteca estandar de kotlin que ejecutan un bloque de codigo dentro del contexto de un objeto, permitiendo acceder a sus miembros sin repetir el nombre del objeto.
-    // Expresion lambda = Es una funcion o subrutina anonima y consica, sin un nombre forma, que se puede usar como un bloque de codigo.
-    // Funciones de ambito (Scope Functions en otro contexto) = Se refieren a las tareas y responsabilidades asignadas a una entidad, rol o unidad en un area o nivel de actuacion especifico.
-    // Scope Functions = Son 5: let - run - with - apply - also.
-    // Optional chaining = (?.) = o tambien conocido como Operacion Elvis
-//    private fun validarRegitro(){
-//        val dni = tietDni.text.toString().trim().takeIf { it.length < 8 }?.let { Toast.makeText(this, "Ingresa tu DNI correctamente.", Toast.LENGTH_SHORT).show();return } // ?: Toast.makeText(this, "DNI correcto!", Toast.LENGTH_LONG).show()
-//        //val dni = tietDni.text.toString().trim().also{ if (it.isEmpty()) Toast.makeText(this, "Ingresa tu DNI.", Toast.LENGTH_SHORT).show() }
-//        val apellido = tietApellido.text.toString().trim().takeIf { it.isEmpty() }?.let { Toast.makeText(this, "Ingresa tu apellido", Toast.LENGTH_SHORT).show();return }
-//        //val apePaterno = tietApellidoPaterno.text.toString().trim().takeIf { it.isEmpty() }?.let { Toast.makeText(this, "Ingresa tu apellido paterno.", Toast.LENGTH_SHORT).show() }
-//        val nombres = tietNombres.text.toString().trim().ifEmpty { Toast.makeText(this, "Ingresa tu nombre", Toast.LENGTH_SHORT).show(); return } // ?: Toast.makeText(this, "Nombre Correcto", Toast.LENGTH_SHORT).show() | Nomas para demostracion
-//        val peso = tietNombres.text.toString().trim().ifEmpty { Toast.makeText(this, "Ingresa tu peso", Toast.LENGTH_SHORT).show(); return }
-//        val altura = tietNombres.text.toString().trim().ifEmpty { Toast.makeText(this, "Ingresa tu altura", Toast.LENGTH_SHORT).show(); return }
-//        val celular = tietCelular.text.toString().trim().also{ if (it.isEmpty()) Toast.makeText(this, "Ingresa tu celular", Toast.LENGTH_SHORT).show() else if(it.length !=9) Toast.makeText(this, "El telefono debe tener 9 digitos", Toast.LENGTH_SHORT).show(); return@also }
-//        val sexo = rgSexo.checkedRadioButtonId.takeIf { it !=-1 }?.let { findViewById<RadioButton>(it).text.toString() }?: Toast.makeText(this, "Selecciona un sexo.", Toast.LENGTH_SHORT).show()
-//        val correo = tietCorreo.text.toString().trim().takeIf { it.isEmpty() }?.let { Toast.makeText(this, "Ingresa tu correo.", Toast.LENGTH_SHORT).show(); return@let }
-//        val clave = tietClave.text.toString().trim().also{ if(it.isEmpty()) Toast.makeText(this, "Ingresa tu clave.", Toast.LENGTH_SHORT).show(); if (it.length < 8) Toast.makeText(this, "La contraseña debe tener almenos 8 caracteres", Toast.LENGTH_LONG).show(); return@also }
-//        val confirmarClave = tietConfirmarClave.text.toString().trim().also{ if(it.isEmpty()) Toast.makeText(this, "Confirma tu clave.", Toast.LENGTH_SHORT).show(); if (clave != it) Toast.makeText(this, "Las constraseñas no coinciden", Toast.LENGTH_LONG).show(); return@also }
-//
-//        registrarUsuario(dni, nombres, apellido, celular, sexo, correo, clave, peso, altura)
-//    }
 
     fun validar(){
         val dni = tietDni.text.toString().trim()

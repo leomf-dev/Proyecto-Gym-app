@@ -14,13 +14,12 @@ import com.cibertec.proygym.entidades.PlanNutricional
 class InicioFragment : Fragment(R.layout.fragment_inicio){
 
     private lateinit var rvPlanes : RecyclerView
-    //private lateinit var planNutricionalAdapter : PlanNutricionalAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         rvPlanes = view.findViewById(R.id.rvPlanes)
-        // requireContext() = devuelve el Context asociado al fragmento.
+
         rvPlanes.layoutManager = LinearLayoutManager(requireContext())
 
         val listaPlanes = listOf(

@@ -26,7 +26,6 @@ class AccesoActivity : AppCompatActivity() {
     private lateinit var btnAcceso : Button
     val dbHelper = GymDB(this)
 
-    // Usuarios temporales
     private val listaUsuarios = mutableListOf(
         Usuario("999999999", "Melendez", "Leonel", "987654321", "Masculino",
             "leomf@gmail.com", "leomf@gmail.com", 60.0, 1.70)
@@ -82,22 +81,16 @@ class AccesoActivity : AppCompatActivity() {
             tilClave.error = ""
         }
 
-        // Buscar usuario en la bd
-        // Se crea una instancia de la clase GymBD y this hace referencia al context actual (Activity)
-        /* val dbHelper = GymDB(this) */
-        // readableDatabase = consultar datos pero no modificar.
-        // writableDatabase = insertar, actualizar o eliminar datos.
+
         val db = dbHelper.readableDatabase
-        // rawQuery = consulta SQL de 3 columnas (clave, nombres, celular) de la tabla usuario.
-        //          que coincida con el parametro pasado (?).
-        // arrawOf(correo) = remplaza el signo (?) por el valor de la variable correo.
+
         val cursor = db.rawQuery(
             "select clave, nombres, celular from usuario where correo = ?",
             arrayOf(correo)
         )
-        // .count = devuelve cuantas filas hubo en la consulta.
+
         if (cursor.count == 0){
-            // .close = nomas pa cerrar la base de datos y liberar recursos.
+
             cursor.close()
             db.close()
             Toast.makeText(this, "La cuenta no existe", Toast.LENGTH_SHORT).show()
@@ -106,12 +99,9 @@ class AccesoActivity : AppCompatActivity() {
             return
         }
 
-        // Obtiener datos del user
-        // Mueve el cursor al primer registro del resultado de la consulta.
-        // Cursor = (No es una fila sino...) Es la lista de filas que ha devuelto el SELECT.
+
         cursor.moveToFirst()
-        // cursor.getString = Lee los valores de las columnas del registro.
-        // correspondientes al orden en el que se hizo el SELECT (muy importante).
+
         val claveGuardada = cursor.getString(0)
         val nombres = cursor.getString(1)
         val celular = cursor.getString(2)
@@ -134,26 +124,6 @@ class AccesoActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
 
-//        if (error){
-//            return
-//        } else {
-//            Toast.makeText(this, "Validacion correcta, Procesando login...", Toast.LENGTH_LONG).show()
-//
-//            var usuarioEncontrado:Usuario ?= null
-//
-//            for (u in listaUsuarios){
-//                if (u.correo == correo + "@gmail" && u.clave == clave){
-//                    usuarioEncontrado = u
-//                    break
-//                }
-//            }
-//            if(usuarioEncontrado != null){
-//                Toast.makeText(this, "Bienvenido ${usuarioEncontrado.nombres}", Toast.LENGTH_LONG).show()
-//                startActivity(Intent(this, InicioActivity::class.java))
-//            } else {
-//                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
-//            }
-//        }
     }
 
     fun cambioActivity(activityDestino : Class<out Activity>){

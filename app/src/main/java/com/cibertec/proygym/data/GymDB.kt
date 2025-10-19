@@ -21,9 +21,7 @@ class GymDB (context : Context) : SQLiteOpenHelper(context, "proygym_db.db", nul
             altura double not null
             )
         """.trimIndent())
-        // Para una segunda entrega:
-        // peso inicial | altura | imc inicial | nivel actividad (esto para mas adelante idk) |
-        // objetivo(perder grasa, ganar masa, mantener peso) | alergias | restricciones dieteticas | observaciones (comentarios al asesor).
+
 
         db.execSQL("""
             create table asesor(
@@ -33,9 +31,7 @@ class GymDB (context : Context) : SQLiteOpenHelper(context, "proygym_db.db", nul
                 correo text not null
             )
         """.trimIndent())
-        // Para una segunda entrega:
-        // especialidad (nuticion o entrenamiento) | telefono (lo quito pa no agregar mucho dato)
-        // estado (activo o inactivo, tampoco lo usare)
+
 
         db.execSQL("""
             create table plan_nutricional (
@@ -48,9 +44,7 @@ class GymDB (context : Context) : SQLiteOpenHelper(context, "proygym_db.db", nul
                 foreign key(id_asesor) references asesor(id_asesor)
             )
         """.trimIndent())
-        // Para una segunda entrega:
-        // proteinas (por dia) | carbohidratos (por dia) | grasas (por dia) | fecha inicio |
-        // fecha fin | observaciones.
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {

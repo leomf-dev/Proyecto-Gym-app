@@ -11,11 +11,6 @@
     app:cardElevation="6dp"
     app:strokeWidth="2dp">
 
-    <!-- Nota: CardView = Fue introducido antes de MaterialDesignComponents asi que solo
-                          tiene diseno basico.
-       MaterialCardView = Mas moderno y de MaterialDesign, es una extension de CardView
-                          Introduciendo nuevas funciones. Con 6 propiedades adicionales: strokeColor,
-                          strokeWidth, checkedIcon, rippleColor, CheckedIconTint, shapeAppareanceOverlay(personalizar bordes). -->
     <LinearLayout
         android:background="@color/verdemenosblanco"
         android:layout_width="match_parent"

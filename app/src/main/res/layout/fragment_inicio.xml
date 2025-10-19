@@ -196,13 +196,6 @@
 
     </HorizontalScrollView>
 
-    <!-- Futuro plan: Dashboard con el progreso, planes y datos personales.
-         En lugar de los items actuales. -->
-
-    <!-- Temporalmente -->
-    <!-- NOTA IMPORTANTE DMNFJKSNKFJA : Top_toBottomOf NO Bottom_toBottomOf | un poco se ingles noma. -->
-    <!-- Top_toBottomOf = LA BENDITA PARTE DE ARRIBA DEL LAYOUT SE POSICIONARA DEBAJO DEL CONTEXTO QUE SE PUSO (EN ESTE CASO FUE UN LAYOUT). -->
-    <!-- Bottom_toBottomOf = LA BENDITA PARTE DE ABAJO DEL LAYOUT (ABAJO) SE POSICIONARA DEBAJO DEL CONTEXTO QUE SE PUSO. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

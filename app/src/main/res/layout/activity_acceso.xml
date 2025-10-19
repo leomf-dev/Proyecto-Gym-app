@@ -93,9 +93,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- La diferencia entre Button y MaterialButton = Button es parte del sistema, en cambio, Material button
-                                            soporta los estilos de MaterialDesign que en parte es de la libreria Material Components (que tampoco son lo mismo)
-                                            desgin = lenguaje de diseno | component = libreria o codigo que lo implementa. -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnInicio"
                 android:layout_width="wrap_content"

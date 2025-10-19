@@ -21,9 +21,6 @@
             android:name=".AccesoActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
