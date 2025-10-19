@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/verdeblanco"
+    android:background="@drawable/degradado_verde"
     tools:context=".RegistroActivity">
 
     <ScrollView
@@ -24,8 +24,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo_gym"
-                android:alpha="0.33"/>
+                android:src="@drawable/sinfondo_logo_gym"
+                android:alpha="0.30"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,6 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="DNI"
+                    app:hintTextColor="@color/black"
                     android:layout_marginTop="16dp"
                     android:layout_marginHorizontal="16dp"
                     app:counterMaxLength="8"
@@ -77,59 +78,59 @@
                                                                                                                    1/6  2/6   3/6
                                         Ejemplo 2: hijo1(weight=1), hijo2(weight=2), hijo3(weight=3), weightSum(3) |■■■■|■■■■■■■■|■■ (no crece más)|
                                                     hijo3 queda fuera del reparto porque weightSum solo permite repartir 3. -->
-                <LinearLayout
-                    android:id="@+id/llayApellido"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="16dp"
-                    android:weightSum="2">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/llayApellido"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginHorizontal="16dp">-->
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilApellidoPaterno"
-                        android:layout_width="0dp"
+                        android:id="@+id/tilApellido"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Apellido paterno"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp">
+                        android:hint="Apellido"
+                        app:hintTextColor="@color/black"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="16dp">
 
                         <!-- Nota: inputType(textCapWords) = Cada palabra que escriba el usuario comenzara con Mayus -->
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/tietApellidoPaterno"
+                            android:id="@+id/tietApellido"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:singleLine="true"
-                            android:inputType="textCapWords"
-                            android:nextFocusDown="@id/tietApellidoMaterno"/>
+                            android:inputType="text"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilApellidoMaterno"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:hint="Apellido materno"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp">
-
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:id="@+id/tilApellidoMaterno"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Apellido materno"-->
+<!--                        app:hintTextColor="@color/black"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_marginStart="8dp">-->
                         <!-- Nota: match_parent = Se ajusta 100% al contenedor padre.
                                     wrap_parent = Se ajusta a como se nesecite su contenido. -->
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/tietApellidoMaterno"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:singleLine="true"
-                            android:inputType="textCapWords"/>
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/tietApellidoMaterno"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:singleLine="true"-->
+<!--                            android:inputType="text"/>-->
 
-                    </com.google.android.material.textfield.TextInputLayout>
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilNombres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombres"
+                    app:hintTextColor="@color/black"
                     android:layout_marginTop="16dp"
                     android:layout_marginHorizontal="16dp">
 
@@ -138,7 +139,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
-                        android:inputType="textCapWords"/>
+                        android:inputType="text"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,6 +148,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Celular"
+                    app:hintTextColor="@color/black"
                     android:layout_marginTop="16dp"
                     android:layout_marginHorizontal="16dp"
                     app:counterMaxLength="9"
@@ -162,15 +164,56 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPeso"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tietPeso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:hint="Peso(kg)"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAltura"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tietAltura"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:layout_marginStart="8dp"
+                            android:hint="Altura(m^2)"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/tvSexo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Sexo:"
+                    android:textColor="@color/negroconcisoperfectoparafondosybordes"
                     android:paddingHorizontal="8dp"
                     android:layout_marginHorizontal="16dp"/>
 
                 <RadioGroup
+                    android:id="@+id/rgSexo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -181,6 +224,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Masculino"
+                        android:textColor="@color/negroconcisoperfectoparafondosybordes"
                         android:layout_weight="1"
                         android:padding="8dp"
                         app:buttonTint="@color/verdeoscuro"/>
@@ -190,6 +234,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Femenino"
+                        android:textColor="@color/negroconcisoperfectoparafondosybordes"
                         android:layout_weight="1"
                         android:padding="8dp"
                         app:buttonTint="@color/verdeoscuro"/>
@@ -199,6 +244,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Prefiero no decirlo"
+                        android:textColor="@color/negroconcisoperfectoparafondosybordes"
                         android:checked="true"
                         android:layout_weight="1"
                         android:padding="8dp"
@@ -211,6 +257,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Correo"
+                    app:hintTextColor="@color/black"
                     android:layout_marginTop="8dp"
                     android:layout_marginHorizontal="16dp"
                     app:suffixText="/@cibertec.edu.pe">
@@ -221,7 +268,8 @@
                         android:layout_height="wrap_content"
                         android:singleLine="true"
                         app:suffixText="\@dominio.com"
-                        android:inputType="text"/>
+                        android:textColor="@color/black"
+                        android:inputType="textEmailAddress"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -231,6 +279,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
+                    app:hintTextColor="@color/black"
                     android:layout_marginTop="16dp"
                     android:layout_marginHorizontal="16dp"
                     app:passwordToggleEnabled="true">
@@ -240,6 +289,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:inputType="textPassword"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilClaveConfirmar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirmar contraseña"
+                    app:hintTextColor="@color/black"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietClaveConfirmar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
                         android:inputType="textPassword"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -268,6 +338,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Registrarse"
+                    android:textColor="@color/white"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/verdeoscuro"
                     style="@style/boton1"/>

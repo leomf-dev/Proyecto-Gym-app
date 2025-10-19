@@ -16,17 +16,21 @@
     <color name="amarillo">#F6FF00</color>
 
     <!--Combinados-->
+    <color name="celesteblanco">#D2FAF6</color>
     <color name="rojonaranja">#FF9D00</color>
     <color name="marronoscuro">#453C1E</color>
     <color name="verdeblanco">#EAFFD6</color>
+    <color name="verdemenosblanco">#8CF257</color>
     <color name="verdeverde">#47FF2B</color>
     <color name="verdeoscuro">#227316</color>
     <color name="verdeaunmasoscuro">#113B0D</color>
+    <color name="celestemaocuro">#294D4D</color>
 
     <!--Contrastes-->
     <color name="negroconcisoperfectoparafondosybordes">#171717</color>
     <color name="grisclaro">#D6D6D6</color>
     <color name="gris">#B0B0B0</color>
     <color name="grisoscuro">#7D7D7D</color>
+
 
 </resources>
